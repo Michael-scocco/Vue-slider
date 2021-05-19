@@ -17,20 +17,21 @@
 
     <div id="app">
 
-        <i class="fas fa-chevron-left"></i>
-
-        <div class="contiene-immagini-palline">
-             <img :src="immagini" alt="slider" width="600" height="400">
-             <ul class="pallini">
-                 <li class="pallina"></li>
-                 <li class="pallina"></li>
-                 <li class="pallina"></li>
-                 <li class="pallina"></li>
-             </ul>
+        <div class="frecce">
+            <i class="fas fa-chevron-left" @click="indietro"></i>
         </div>
 
-        <i class="fas fa-chevron-right"></i>
-    
+        <div class="contiene-immagini-palline">
+             <img :src="immagini[counter]" alt="slider" width="600" height="400">
+             <nav>
+                <i class="far fa-circle" v-for="(immagine, index) in immagini"></i>
+             </nav>
+        </div>
+
+
+        <div class="frecce">
+            <i class="fas fa-chevron-right" @click="avanti"></i>
+        </div>
 
     </div>
     
